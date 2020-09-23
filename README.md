@@ -1,8 +1,9 @@
 # 1inch UNI addresses
 In this repository we collected all users who used trough 1inch Uniswap and didn't get any UNI rewarded.
 
-We found 4935 unique transaction 1inch tx originators who missed UNI airdrop but used Uniswap internally
-``
+We found 4935 unique transaction 1inch tx originators who missed UNI airdrop but used Uniswap internally.
+
+```sql
 SELECT 
   DISTINCT from_address
 FROM bigquery-public-data.crypto_ethereum.transactions
@@ -28,6 +29,6 @@ WHERE hash IN (
     '0xdff2aa5689fcbc7f479d8c84ac857563798436dd'
   )
 )
-`` 
+```
 Uniswap V1 condition: to_address = '0x2157a7894439191e520825fe9399ab8655e0f708'
 Uniswap V2 condition: SUBSTR(input, 1, 10) = '0x022c0d9f'
